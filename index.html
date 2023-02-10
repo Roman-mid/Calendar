@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <meta property="og:site_name" content="Calendar">
+  <meta property="og:title" content="Calendar">
+  <meta property="og:image" content="https://sitename.ru/img/preview.jpg">
+  <meta property="og:description" content="Convenient and functional calendar">
+
+  <meta name="description" content="Convenient and functional calendar">
+  <meta name="keywords" content="calendar, convenient and functional calendar, find date, find out date">
+
+  <meta name="theme-color" content="#6dd4fa">
+  <link rel="apple-touch-icon" type="image/svg" href="img/touch_icon.png">
+  <link rel="icon" type="image/svg" href="img/favecon2.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="full-screen">
+
+  <div class="video-wrap ">
+    <video class="video-wrap__video "  class="video" autoplay muted loop>
+      <source src="video/autumn.mp4" type="video/mp4" class="video" >
+    </video>
+    <video class="video-wrap__video "  autoplay muted loop>
+      <source src="video/winter.mp4" type="video/mp4" class="video video-one">
+    </video>
+    <video class="video-wrap__video "  autoplay muted loop>
+      <source src="video/spring.mp4" type="video/mp4" class="video " >
+    </video>
+    <video class="video-wrap__video "  autoplay muted loop>
+      <source src="video/summer.mp4" type="video/mp4" class="video " >
+    </video>
+  </div>
+
+  <div class="conatiner"> 
+    
+    <div class="wrap-text">
+      <p class="wrap-text__text wrat-text_title"></p>
+      <p class="wrap-text__text wrat-text_year" ></p>
+    </div>
+
+    <div class="month-wrap">
+      <div class="wrap-week">
+        <span class="day-name"data-num="1">Mo</span>
+        <span class="day-name"data-num="2">Tu</span>
+        <span class="day-name"data-num="3">We</span>
+        <span class="day-name"data-num="4">Th</span>
+        <span class="day-name"data-num="5">Fr</span>
+        <span class="day-name"data-num="6">Sa</span>
+        <span class="day-name"data-num="0">Su</span>
+      </div>
+  
+      <div class="wrap-days"></div>
+    </div>
+    <div class="inputs-wrap">
+      <input class="inputs-wrap__inp inputs-wrap__inp_year" type="number" maxlength="4" placeholder="Year">
+      <input class="inputs-wrap__inp inputs-wrap__inp_month" type="number" maxlength="2" placeholder="Month">
+      <input class="inputs-wrap__inp inputs-wrap__inp_day" type="number" maxlength="2" placeholder="Day">
+      <button type="button" class="btn inputs-wrap__btn">Select</button>
+    </div>
+    <button type="button" class="btn today">Today</button>
+    <div class="btns-wrap">
+      <button class="btns-wrap__btn back"><span></span></button>
+      <button class="btns-wrap__btn next"><span></span></button>
+    </div>
+    <div class="other-manth">
+      <span class="other-manth__name other-manth__name_back"></span>
+      <span class="other-manth__name other-manth__name_next"></span>
+    </div>
+  </div>
+</div>
+  <script src="main.js"></script>
+</body>
+</html>
+
