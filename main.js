@@ -11,27 +11,14 @@ const textsDate = document.querySelectorAll('.wrap-text__text'),
       btnSelect = document.querySelector('.inputs-wrap__btn'),
       inputs = document.querySelectorAll('.inputs-wrap__inp'),
       otherMonth = document.querySelectorAll('.other-manth__name'),
-      video = document.querySelectorAll('.video-wrap__video')
+      video = document.querySelectorAll('.video-wrap__video'),
+      fullScreen = document.querySelector('.full-screen')
 ;
-
-// const video = document.querySelectorAll('.video-wrap__video');
-
 
 const date = new Date();
 let yearNow = date.getFullYear();
 let monthNow = date.getMonth();
 let dayNow = date.getDate();
-
-// function addClass(month, num1, num2, num3, oldClass1, oldClass2, oldClass3, newClass) {
-//   if(month == num1 || month == num2 || month == num3) {
-//     body.classList.remove(oldClass1);
-//     body.classList.remove(oldClass2);
-//     body.classList.remove(oldClass3);
-//     body.classList.add(newClass)
-//   };
-// };
-
-
 
 function addClass(month, num1, num2, num3,  newClass, el) {
   if(month == num1 || month == num2 || month == num3) {
@@ -40,7 +27,6 @@ function addClass(month, num1, num2, num3,  newClass, el) {
     el.classList.remove(newClass)
   };
 };
-
 
 function addClassInp(month, num1, num2, num3,  newClass, arr) {
 
@@ -53,12 +39,11 @@ function addClassInp(month, num1, num2, num3,  newClass, arr) {
   } 
 }
 
-
 function palyFuncs(month = date.getMonth()) {
-  addClass(month, 5, 6, 7, 'summer', video[3]) // summer
-  addClass(month, 8, 9, 10,  'autumn' , video[0]) // autumn
-  addClass(month, 11, 0, 1,  'winter', video[1]) // winter
-  addClass(month, 2, 3, 4,  'spring', video[2]) // spring
+  addClass(month, 5, 6, 7, 'summer', fullScreen) // summer
+  addClass(month, 8, 9, 10,  'autumn' , fullScreen) // autumn
+  addClass(month, 11, 0, 1,  'winter', fullScreen) // winter
+  addClass(month, 2, 3, 4,  'spring', fullScreen) // spring
 
   addClass(month, 8, 9, 10,  'btn-autumn', btnToday)  // autumn
   addClass(month, 8, 9, 10,  'btn-autumn', btnSelect) // autumn
@@ -77,27 +62,7 @@ function palyFuncs(month = date.getMonth()) {
   addClassInp(month, 5, 6, 7,  'inp-summer', inputs) // summer
   addClassInp(month, 11, 0, 1,  'inp-winter', inputs) // winter
 
-
 };
-
-
-// function addClassBtn(month, num1, num2, num3,  newClass, el) {
-//   if(month == num1 || month == num2 || month == num3) {
-//     el.classList.add(newClass)
-//   } else {
-//     el.classList.remove(newClass)
-//   };
-// };
-
-
-
-// function palyFuncs(month = date.getMonth()) {
-//   addClass(month, 5, 6, 7, 'winter', 'autumn', 'spring', 'summer') // summer
-//   addClass(month, 8, 9, 10, 'winter', 'spring', 'summer', 'autumn') // autumn
-//   addClass(month, 11, 0, 1, 'autumn', 'spring', 'summer', 'winter') // winter
-//   addClass(month, 2, 3, 4, 'autumn', 'autumn', 'summer', 'spring') // spring
-// };
-
 
 // главная ф-ция постоения календаря
 function createMonth(year, month, day) {
@@ -148,11 +113,8 @@ function createMonth(year, month, day) {
     }
 
     wrapDays.append(span)
-  };
-  
-
+  }; 
 };
-
 
 // проверка пустоты инпута 
 function checkEmpty(arrInp) {
@@ -240,16 +202,6 @@ btnToday.addEventListener('click' , () => {
 // кнопка выбора даты
 btnSelect.addEventListener('click' , function chooseDate()  {
 
-
-
-  // for(let inp of inputs) {
-  //   if(inp.value == '') {
-  //     inp.classList.add('error')
-  //   } else {
-  //     inp.classList.remove('error')
-  //   }
-  // }
-
   checkEmpty(inputs)
   
   chechInputLength(inputs[0], 4 , 4);
@@ -258,93 +210,18 @@ btnSelect.addEventListener('click' , function chooseDate()  {
   
   checkCount(inputs[1], 12, 1);
   checkCount(inputs[2], 31, 1);
-
-    // if(inputs[0].value.length != 4) {
-    //   inputs[0].classList.add('error')
-    //   console.log('-')
-    // } else if(inputs[0].value.length == 4){
-    //   inputs[0].classList.remove('error')
-    //   console.log('+')
-    // }
-
-    // if(inputs[1].value.length > 2 || inputs[1].value.length == 0) {
-    //   inputs[1].classList.add('error')
-    // } else {
-    //   inputs[1].classList.remove('error')
-    // }
-
-    // if(inputs[2].value.length > 2 || inputs[2].value.length == 0) {
-    //   inputs[2].classList.add('error')
-    // } else {
-    //   inputs[2].classList.remove('error')
-    // }
-  
-  // if(inputs[1].value > 12 ) {
-  //   inputs[1].classList.add('error');
-  //   btnSelect.removeEventListener('click' , chooseDate());
-  // }
-  // if(inputs[2].value > 31) {
-  //   inputs[2].classList.add('error');
-  //   btnSelect.removeEventListener('click' , chooseDate());
-  // }
-
-
  
+  if(!inputs[0].classList.contains('error') && !inputs[1].classList.contains('error') && !inputs[2].classList.contains('error')) {
 
-  // if(inputs[0].value != '' && inputs[1].value != '' && inputs[2].value != '') {
-    if(!inputs[0].classList.contains('error') && !inputs[1].classList.contains('error') && !inputs[2].classList.contains('error')) {
+    wrapDays.textContent = '';
+    const selectDate = new Date(inputs[0].value, inputs[1].value , inputs[2].value)
+    createMonth(selectDate.getFullYear(), selectDate.getMonth() - 1, selectDate.getDate())
+    palyFuncs(inputs[1].value - 1)
 
-    // if(inputs[0].value.length == 4  && inputs[1].value.length <= 2  && inputs[2].value.length <= 2 ) {
-
- 
-      // for(let inp of inputs) {
-      //   inp.classList.remove('error')
-      // }
-
-      wrapDays.textContent = '';
-      const selectDate = new Date(inputs[0].value, inputs[1].value , inputs[2].value)
-      createMonth(selectDate.getFullYear(), selectDate.getMonth() - 1, selectDate.getDate())
-      palyFuncs(inputs[1].value - 1)
-
-      for(let inp of inputs) {
-        inp.value = '';
-      }
-
-    // } else {
-      // for(let inp of inputs) {
-      //   inp.classList.add('error')
-      // }
-    // }
-    
+    for(let inp of inputs) {
+      inp.value = '';
+    }
   } 
-
-
-//   for(let inp of inputs) {
-
-//     if(inp.value != '') {
-//       inp.classList.remove('error');
-
-//       wrapDays.textContent = '';
-
-//       const selectDate = new Date(inputs[0].value, inputs[1].value , inputs[2].value)
-//       createMonth(selectDate.getFullYear(), selectDate.getMonth() - 1, selectDate.getDate())
-//       palyFuncs(inputs[1].value - 1)
-
-//       for(let inp of inputs) {
-//         inp.value = ''; 
-//       }
-//     } else {
-//       inp.classList.add('error')
-//       console.log('+')
-//     }
-//   }
-// })
-
-// const video = document.querySelectorAll('.video-wrap__video')
-// console.log(video)
-// btnNext.addEventListener('click' ,() => {
-//   video[0].classList.toggle('hidden');
-//   video[1].classList.toggle('hidden');
 })
 
 

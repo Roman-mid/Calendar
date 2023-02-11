@@ -1,69 +1,23 @@
 
 body {
   font-family: 'Courgette', sans-serif;
+  /* min-height: 100vh; */
 }
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
 .full-screen {
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* padding: 50px 15px; */
-}
-.video-wrap {
-  background: #631818;
-  /* width: 100vw; */
-
-
-  /* width: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
-
-
-  top: 0;
-  padding: 0;
-}
-@keyframes video {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* .video-wrap__video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  animation: video 0.5s forwards linear;
-  display: none;
-} */
-
-.video-wrap__video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-}
-.video-two {
-  display: none;
+  transition: 1s;
 }
 .conatiner {
   position: relative;
@@ -83,7 +37,6 @@ body {
   opacity: 0.5;
   z-index: -1;
 }
-
 .wrap-text {
   margin-bottom: 20px;
 }
@@ -138,7 +91,6 @@ body {
   border: none;
   padding: 0 15px;
   border-radius: 5px;
-  /* box-shadow: inset 0 0 10px #6dd4fa; */
   outline: none;
   transition: 0.5s;
 }
@@ -178,7 +130,6 @@ body {
   cursor: pointer;
   letter-spacing: 2px;
   color: #fff;
-  /* background: #6dd4fa; */
   letter-spacing: 2px; 
 }
 .btn-winter,
@@ -279,16 +230,16 @@ body {
   left: 725px;
 }
 .summer {
-  display: block;
+  background: url('../img/summer.jpg') 50% 50% / cover no-repeat ;
 }
 .winter {
-  display: block;
+  background: url('../img/winter3.jpg') 50% 50% / cover no-repeat ;
 }
 .autumn {
-  display: block;
+  background: url('../img/autumn.jpg') 50% 50% / cover no-repeat ;
 }
 .spring {
-  display: block;
+  background: url('../img/spring2.jpg') 50% 50% / cover no-repeat ;
 }
 
 .error { 
@@ -346,20 +297,32 @@ body {
   }
   .back {
     left: 0;
-    top: 110%;
+    top: 115%;
   }
   .next {
     left: 525px;
-    top: 110%;
+    top: 115%;
   }
   .other-manth__name_back {
     left: -15px;
-    top: 105%;
+    top: 108%;
 
   }
   .other-manth__name_next {
     left: 500px;
-    top: 105%;
+    top: 108%;
+  }
+  .summer {
+    background: url('../img/summer-phone.jpg')  50% 50%/ cover no-repeat ;
+  }
+  .autumn {
+    background: url('../img/autumn-phone.jpg') 50% 50% / cover no-repeat ;
+  }
+  .winter {
+    background: url('../img/winter-phone.jpg')  50% 50% / cover no-repeat ;
+  }
+  .spring {
+    background: url('../img/spring-phone.jpg') 50% 50% / cover no-repeat ;
   }
 }
 
@@ -397,11 +360,19 @@ body {
   .today {
     margin-top: 10px;
   }
-  .other-manth {
-    display: none;
+  .other-manth__name_next {
+    left: 225px;
   }
   .next {
     left: 250px;
+  }
+  .back:hover {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  .next:hover {
+    transform: translate(0, 0) scaleX(-1);
+    opacity: 1;
   }
 }
 
