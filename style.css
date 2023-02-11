@@ -230,16 +230,16 @@ body {
   left: 725px;
 }
 .summer {
-  background: url('../img/summer.jpg') 50% 50% / cover no-repeat ;
+  background: url('img/summer.jpg') 50% 50% / cover no-repeat ;
 }
 .winter {
-  background: url('../img/winter3.jpg') 50% 50% / cover no-repeat ;
+  background: url('img/winter3.jpg') 50% 50% / cover no-repeat ;
 }
 .autumn {
-  background: url('../img/autumn.jpg') 50% 50% / cover no-repeat ;
+  background: url('img/autumn.jpg') 50% 50% / cover no-repeat ;
 }
 .spring {
-  background: url('../img/spring2.jpg') 50% 50% / cover no-repeat ;
+  background: url('img/spring2.jpg') 50% 50% / cover no-repeat ;
 }
 
 .error { 
@@ -313,16 +313,16 @@ body {
     top: 108%;
   }
   .summer {
-    background: url('../img/summer-phone.jpg')  50% 50%/ cover no-repeat ;
+    background: url('img/summer-phone.jpg')  50% 50%/ cover no-repeat ;
   }
   .autumn {
-    background: url('../img/autumn-phone.jpg') 50% 50% / cover no-repeat ;
+    background: url('img/autumn-phone.jpg') 50% 50% / cover no-repeat ;
   }
   .winter {
-    background: url('../img/winter-phone.jpg')  50% 50% / cover no-repeat ;
+    background: url('img/winter-phone.jpg')  50% 50% / cover no-repeat ;
   }
   .spring {
-    background: url('../img/spring-phone.jpg') 50% 50% / cover no-repeat ;
+    background: url('img/spring-phone.jpg') 50% 50% / cover no-repeat ;
   }
 }
 
